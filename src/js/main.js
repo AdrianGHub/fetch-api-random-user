@@ -1,7 +1,12 @@
 "use strict";
+const getRandomUsers = e => {
+  e.preventDefault();
 
-const getRandomUsers = () => {
-  const url = "https://randomuser.me/api/?results=10";
+  const usersGender = document.querySelector('[name = "users-gender"]').value;
+  const usersNumber = document.querySelector('[name = "users-number"]').value;
+  const url = `https://randomuser.me/api/?results=${usersNumber}&gender=${
+    usersGender === "both" ? "male,female" : usersGender
+  }`;
 
   fetch(url)
     .then(res => {
@@ -15,6 +20,8 @@ const getRandomUsers = () => {
     .catch(err => console.log(err));
 };
 
-document.querySelector("button").addEventListener("click", getRandomUsers);
+document
+  .querySelector(".users-generator--js")
+  .addEventListener("submit", getRandomUsers);
 
 console.log(`Hello world!`);
