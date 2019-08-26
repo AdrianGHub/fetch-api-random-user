@@ -13,4 +13,12 @@ html {
 body {
   color: $yellow;
   background: $violet;
+  font-family: arial, sans-serif;
+  font-size: 22px;
+  min-width: 1200px;
+  margin: 50px auto;
+}
+
+input, select {
+  font-size: 22px;
 }
