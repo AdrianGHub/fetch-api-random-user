@@ -16,8 +16,23 @@ const getRandomUsers = e => {
         return res.json();
       }
     })
-    .then(json => console.log(json))
+    .then(json => showRandomUsers(json.results))
     .catch(err => console.log(err));
+};
+
+const showRandomUsers = users => {
+  const usersList = document.querySelector(".users-list");
+  usersList.textContent = "";
+  users.forEach(user => {
+    const item = document.createElement("li");
+    item.className = "user";
+    item.innerHTML = `
+    <img class="user__image" src="${user.picture.medium}">
+    <p class="user__name">${user.name.title.toUpperCase()} ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}</p>
+    `;
+
+    usersList.appendChild(item);
+  });
 };
 
 document
