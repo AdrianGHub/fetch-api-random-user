@@ -24,7 +24,31 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <button>Fetch Users Data</button>
+    <form class="users-generator users-generator--js">
+      <label class="users-generator__input-name"
+        >Select gender
+        <select name="users-gender" class="users-generator__select">
+          <option value="both" selected>Both</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </label>
+
+      <label class="users-generator__input-name"
+        >Number of users
+        <input
+          type="number"
+          class="generator__input"
+          name="users-number"
+          value="10"
+        />
+      </label>
+      <input
+        type="submit"
+        class="users-generator__button users-generator__button--js"
+        value="Fetch random users"
+      />
+    </form>
 
     <script src="js/main.js"></script>
   </body>

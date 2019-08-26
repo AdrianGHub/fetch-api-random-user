@@ -317,6 +317,13 @@ html {
 
 body {
   color: #F9C802;
-  background: #000; }
+  background: #000;
+  font-family: arial, sans-serif;
+  font-size: 22px;
+  min-width: 1200px;
+  margin: 50px auto; }
+
+input, select {
+  font-size: 22px; }
 
 /*# sourceMappingURL=main.css.map */
